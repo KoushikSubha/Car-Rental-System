@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Car Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .car-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .car {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .car img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .car h3 {
+            margin-top: 10px;
+        }
+
+        .rental-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .rental-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .rental-form input[type="text"], .rental-form input[type="date"] {
+            width: calc(100% - 10px);
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .rental-form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .rental-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Car Rental</h1>
+        <div class="car-list">
+            <div class="car">
+                <img src="car1.png.jfif" alt="car1">
+                <h3>Car 1</h3>
+            </div>
+            <div class="car">
+                <img src="car2.png.png" alt="car2">
+                <h3>Car 2</h3>
+            </div>
+            <div class="car">
+                <img src="car3.png.jpg" alt="car3">
+                <h3>Car 3</h3>
+            </div>
+        </div>
+        <div class="rental-form">
+            <h2>Rental Details</h2>
+            <form id="rentalForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+                <label for="pickupDate">Pickup Date:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+                <label for="returnDate">Return Date:</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+                <button type="submit">Submit Rental Request</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rentalForm = document.getElementById('rentalForm');
+
+            rentalForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const pickupDate = document.getElementById('pickupDate').value;
+                const returnDate = document.getElementById('returnDate').value;
+
+                // You can handle the form submission here, for example:
+                // Send the form data to a server using AJAX or fetch()
+
+                // Display a success message
+                alert('Rental request submitted successfully!');
+
+                // Clear the form
+                rentalForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
